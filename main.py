@@ -6,7 +6,16 @@ url = "https://api.vndb.org/kana/vn"
 headers = {"Content-Type": "application/json"}
 data = {
     "fields": "title, image.url, rating, tags.name, developers.name",
-    "filters": ['and', ["search", "=", "Clannad"], ['rating', '>', '11'], ['developer', '=', ['search', '=', 'prototype']], ],
+    "filters":
+    ['and'
+        , ["search", "=", "Clannad"]
+        , ['rating', '>', '11']
+        , ['developer', '=', ['search', '=', 'key']] # These three must be true
+        , ['or'
+            , ['tag', '=', [Tag.FANTASY.value, 0, 0]]
+            , ['tag', '=', [Tag.ROMANCE.value, 0, 0]] # as long as one of them are true
+        ]
+    ],
     "sort": "searchrank",
     "results": 10
 }
