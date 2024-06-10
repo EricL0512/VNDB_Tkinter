@@ -1,7 +1,7 @@
 # VNDB_Tkinter
 Using VNDB API along with Tkinter via Tkinter Designer
 
-don't forget to pip install -r requirements.txt
+don't forget to pip install -r requirements.txt (cd to navigate)
 
 Change root files to correct parameters
 
