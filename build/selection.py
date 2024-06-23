@@ -19,7 +19,7 @@ developer_str = ''
 rating_str = ''
 greater_than = True
 less_than = False
-tags_lib = {"FANTASY": 0, "DRAMA": 0, "ROMANCE": 0, "SEXUAL_CONTENT": 0, "SCIENCE_FICTION": 0, "COMEDY": 0,
+tags_lib = {"FANTASY": 0, "DRAMA": 0, "ROMANCE": 0, "SEXUAL_CONTENT": 2, "SCIENCE_FICTION": 0, "COMEDY": 0,
             "MYSTERY": 0, "HORROR": 0, "ACTION": 0}
 tags_lib_helper = {'fantasy': "FANTASY", 'drama': 'DRAMA', 'romance': 'ROMANCE', 'eroge': 'SEXUAL_CONTENT',
                    'scifi': 'SCIENCE_FICTION', 'comedy': 'COMEDY', 'mystery': 'MYSTERY', 'horror': 'HORROR',
@@ -78,7 +78,6 @@ def print_param():
     print("mystery: " + is_included(tags_lib[tags_lib_helper['mystery']]))
     print("horror: " + is_included(tags_lib[tags_lib_helper['horror']]))
     print("action: " + is_included(tags_lib[tags_lib_helper['action']]))
-    print("eroge: " + is_included(tags_lib[tags_lib_helper['eroge']]))
     print()
     if greater_than == True:
         print("greater than or equal to: " + '\033[32mtrue\033[0m')
@@ -87,6 +86,7 @@ def print_param():
         print("greater than or equal to: " + '\033[31mfalse\033[0m')
         print("less than or equal to: " + '\033[32mtrue\033[0m')
     print("\n\n\n")
+
 def is_included(i: int):
     if i % 3 == 0:
         return 'Neutral'
@@ -320,21 +320,22 @@ def main() -> None:
         height=75.0
     )
 
-    button_image_6 = PhotoImage(
-        file=relative_to_assets("eroge.png"))
-    button_6 = Button(
-        image=button_image_6,
-        borderwidth=0,
-        highlightthickness=0,
-        command=lambda: edit_tags("SEXUAL_CONTENT"),
-        relief="flat"
-    )
-    button_6.place(
-        x=956.0,
-        y=580.0,
-        width=200.0,
-        height=75.0
-    )
+# REMOVES EROGE FUNCTIONALITY. AUTOMATICALLY EXCLUDED
+    # button_image_6 = PhotoImage(
+    #     file=relative_to_assets("eroge.png"))
+    # button_6 = Button(
+    #     image=button_image_6,
+    #     borderwidth=0,
+    #     highlightthickness=0,
+    #     command=lambda: edit_tags("SEXUAL_CONTENT"),
+    #     relief="flat"
+    # )
+    # button_6.place(
+    #     x=956.0,
+    #     y=580.0,
+    #     width=200.0,
+    #     height=75.0
+    # )
 
     button_image_7 = PhotoImage(
         file=relative_to_assets("fantasy.png"))
