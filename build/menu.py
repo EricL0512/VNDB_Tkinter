@@ -7,10 +7,11 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+import os
 import selection
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\ericl\PycharmProjects\VNDB_Tkinter_MK2\build\assets\menu_img")
+ASSETS_PATH = OUTPUT_PATH / Path(os.getcwd() + r"\assets\menu_img")
 
 
 def relative_to_assets(path: str) -> Path:

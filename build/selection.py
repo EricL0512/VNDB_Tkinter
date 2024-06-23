@@ -7,11 +7,12 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, font
+import os
 import resultMK2
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\ericl\PycharmProjects\VNDB_Tkinter_MK2\build\assets\selection_img")
+ASSETS_PATH = OUTPUT_PATH / Path(os.getcwd() + r"\assets\selection_img")
 
 name_str = ''
 developer_str = ''
@@ -24,16 +25,16 @@ tags_lib_helper = {'fantasy': "FANTASY", 'drama': 'DRAMA', 'romance': 'ROMANCE',
                    'scifi': 'SCIENCE_FICTION', 'comedy': 'COMEDY', 'mystery': 'MYSTERY', 'horror': 'HORROR',
                    'action': 'ACTION'}
 
-# If only this worked. What a waste of time. In tkinter we suffer
-def tags_color(input: str) -> str:
-    tag = tags_lib_helper[input]
-    tag_value = tags_lib[tag]
-    if tag_value % 3 == 0:
-        return input + '.png'
-    if tag_value % 3 == 1:
-        return input + '_green.png'
-    if tag_value % 3 == 2:
-        return input + '_red.png'
+## Currently unusable and broken
+# def tags_color(input: str) -> str:
+#     tag = tags_lib_helper[input]
+#     tag_value = tags_lib[tag]
+#     if tag_value % 3 == 0:
+#         return input + '.png'
+#     if tag_value % 3 == 1:
+#         return input + '_green.png'
+#     if tag_value % 3 == 2:
+#         return input + '_red.png'
 
 
 def relative_to_assets(path: str) -> Path:

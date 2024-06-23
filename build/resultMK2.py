@@ -110,7 +110,7 @@ def main(tags_lib1, name_str1 = '', developer_str1 = '', rating_str1 = '', great
         "filters": filter_format(),
         "sort": "votecount",
         "reverse": True, # Normally sorts from lowest to highest
-        "results": 25
+        "results": 10
     }
     response = requests.post(url, headers=headers, json=data)
     result_json = response.json()
